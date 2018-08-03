@@ -1,11 +1,25 @@
 import React from 'react';
 import Loadable from 'react-loadable'
-
 import DefaultLayout from './containers/DefaultLayout';
 
 function Loading() {
   return <div>Loading...</div>;
 }
+
+const SettingsPage = Loadable({
+  loader: () => import('./components/SettingsScreen'),
+  loading: Loading,
+});
+
+const MessagesPage = Loadable({
+  loader: () => import('./components/MessagesScreen'),
+  loading: Loading,
+});
+
+const DevicesPage = Loadable({
+  loader: () => import('./components/DevicesScreen'),
+  loading: Loading,
+});
 
 const Breadcrumbs = Loadable({
   loader: () => import('./views/Base/Breadcrumbs'),
@@ -188,6 +202,12 @@ const User = Loadable({
 const routes = [
   { path: '/', exact: true, name: 'Home', component: DefaultLayout },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
+
+  { path: '/settings', name: 'Settings ', component: SettingsPage },
+  { path: '/messages', name: 'Messages', component: MessagesPage },
+  { path: '/devices', name: 'Devices List', component: DevicesPage },
+
+
   { path: '/theme', exact: true, name: 'Theme', component: Colors },
   { path: '/theme/colors', name: 'Colors', component: Colors },
   { path: '/theme/typography', name: 'Typography', component: Typography },

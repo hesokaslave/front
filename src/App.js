@@ -16,22 +16,23 @@ import './scss/style.css'
 // Containers
 import { DefaultLayout } from './containers';
 // Pages
-import { Login, Page404, Page500, Register } from './views/Pages';
+import  Login  from './components/Login';
+import  Main  from './components/Main';
 
-// import { renderRoutes } from 'react-router-config';
+import { store } from './Store.js'
+import { Provider } from 'react-redux'
+import { connect } from 'react-redux'
 
 class App extends Component {
+  constructor(props){
+    super(props)
+  }
+  
   render() {
-    return (
-      <HashRouter>
-        <Switch>
-          <Route exact path="/login" name="Login Page" component={Login} />
-          <Route exact path="/register" name="Register Page" component={Register} />
-          <Route exact path="/404" name="Page 404" component={Page404} />
-          <Route exact path="/500" name="Page 500" component={Page500} />
-          <Route path="/" name="Home" component={DefaultLayout} />
-        </Switch>
-      </HashRouter>
+      return (
+      <Provider store={store}>
+        <Main />
+      </Provider>
     );
   }
 }
