@@ -38,6 +38,12 @@ class GeneralConfig extends React.Component {
                 action="SET_APP_IS_DOWN" />
 
               <TextField
+                label ="App is Down Messsage Title"
+                value={this.props.config ? this.props.config.isDownTitle : ''}
+                placeholder="Title for Message"
+                action="SET_APP_IS_DOWN_MESSAGE_TITLE" />
+
+              <TextField
                 label ="App is Down Messsage"
                 value={this.props.config ? this.props.config.isDownMessage : ''}
                 placeholder="PlaceHolder"
@@ -54,6 +60,17 @@ class GeneralConfig extends React.Component {
                   value={this.props.config ? this.props.config.contactURL : ''}
                   placeholder="Messaging URL"
                   action="SET_CONTACT_URL" />
+
+                <Switch
+                  label ="Force to Update ?"
+                  value={this.props.config ? this.props.config.forceUpdate : false}
+                  action="SET_FORCE_UPDATE" />
+
+                <TextField
+                  label ="Force Update Message"
+                  value={this.props.config ? this.props.config.updateNeededMessage : ''}
+                  placeholder="Message"
+                  action="SET_UPDATE_NEEDED_MESSAGE" />
 
                 <Switch
                   label ="Gather Usage Infos ?"

@@ -72,7 +72,7 @@ class SettingsScreen extends React.Component {
       env : 'prod',
       value : this.props.config
     };
-    callPatchApi(`http://pixelprice.co.uk/config/${conf.uuid}/${conf.env}`,{
+    callPatchApi(`http://configapp.herokuapp.com/config/${conf.uuid}/${conf.env}`,{
       env: conf.env,
       value : conf.value
     }).then(()=>{

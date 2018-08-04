@@ -36,7 +36,7 @@ class ColorPicker extends Component {
     this.setState({pickerVisible : !this.state.pickerVisible})
   }
 
-  ComponentDidMount(){
+  componentDidMount(){
     this.setState({color : this.props.value})
   }
 

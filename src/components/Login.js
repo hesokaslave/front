@@ -16,17 +16,12 @@ class Login extends Component {
     else {
       this.setState({isVisible : true})
       this.props.dispatch({type : 'SET_LOGGED_IN', data : false })
-      setTimeout(() => this.setState({isVisible : false}), 1500);
     }
   }
 
   onDismiss = () => {
     this.setState({isVisible : ! this.state.isVisible})
   }
-
-
-
-
 
   render() {
     return (

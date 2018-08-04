@@ -8,6 +8,9 @@ import {callGetApi,fetchData} from './services/APIservice'
       case 'SET_APP_IS_DOWN' : return {...state, config : { ...state.config,isDown : action.data}} ; break;
       case 'SET_GET_DATA' : return {...state, config : { ...state.config,getData : action.data}} ; break;
       case 'SET_APP_IS_DOWN_MESSAGE' : return {...state, config : { ...state.config,isDownMessage : action.data}} ; break;
+      case 'SET_APP_IS_DOWN_MESSAGE_TITLE' : return {...state, config : { ...state.config,isDownTitle : action.data}} ; break;
+      case 'SET_UPDATE_NEEDED_MESSAGE' : return {...state, config : { ...state.config,updateNeededMessage : action.data}} ; break;
+      case 'SET_FORCE_UPDATE' : return {...state, config : { ...state.config,forceUpdate : action.data}} ; break;
       case 'SET_RH_WEBSITE' : return {...state, config : { ...state.config,websiteRH : action.data}} ; break;
       case 'SET_CONTACT_URL' : return {...state, config : { ...state.config,contactURL : action.data}} ; break;
 
