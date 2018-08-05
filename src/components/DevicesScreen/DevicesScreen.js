@@ -10,7 +10,7 @@ class Devices extends Component {
     this.state = {
       msgs : []
     }
-    callGetApi('http://configapp.herokuapp.com/device').then((res)=>{
+    callGetApi('https://configapp.herokuapp.com/device').then((res)=>{
       console.log(res)
       this.setState({msgs : res})
     })

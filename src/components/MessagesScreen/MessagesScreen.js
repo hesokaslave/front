@@ -7,7 +7,7 @@ class Messages extends Component {
   constructor(props){
     super(props)
     this.state = { msgs : [] }
-    callGetApi('http://configapp.herokuapp.com/message')
+    callGetApi('https://configapp.herokuapp.com/message')
     .then( res => this.setState({msgs : res}) ).catch(err => console.log(err))
   }
 
