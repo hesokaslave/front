@@ -43,13 +43,13 @@ export function callGetApi(urlStr) {
 }
 
 export function fetchData() {
- return callGetApi('http://configapp.herokuapp.com/config/AppConfig/dev').then((response) => {
+ return callGetApi('https://configapp.herokuapp.com/config/AppConfig/dev').then((response) => {
     return response;
   }).catch(err => console.log(err))
 }
 
 export function fetchConfig(confID, env) {
- return callGetApi(`http://configapp.herokuapp.com/config/${confID}/${env}`).then((response) => {
+ return callGetApi(`https://configapp.herokuapp.com/config/${confID}/${env}`).then((response) => {
     return response;
   }).catch(err => console.log(err))
 }
